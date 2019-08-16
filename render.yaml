@@ -2,6 +2,7 @@ services:
 - type: pserv
   name: mysql
   plan: standard
+  branch: mysql-5
   env: docker
   disk:
     name: mysql
