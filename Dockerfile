@@ -3,9 +3,6 @@
 FROM mysql/mysql-server:5.7.24
 
 # Add timezone data
-RUN apt-get update \
- && apt-get install --no-install-recommends -y tzdata \
- && apt-get clean \
- && rm -r /var/lib/apt/lists/*
+RUN yum install tzdata
 
 COPY config/user.cnf /etc/mysql/my.cnf
