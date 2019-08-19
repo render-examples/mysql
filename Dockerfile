@@ -3,6 +3,8 @@
 FROM mysql/mysql-server:8.0.17
 
 # Add timezone data
-RUN yum install tzdata
+RUN yum install -y tzdata && \
+    yum clean all && \
+    rm -rf /var/cache/yum
 
 COPY config/user.cnf /etc/mysql/my.cnf
