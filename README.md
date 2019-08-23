@@ -1,4 +1,4 @@
-# README
+# MySQL on Render
 
 This is a template repository for running [MySQL](https://www.mysql.com) on Render. 
 
