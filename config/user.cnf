@@ -6,4 +6,4 @@ default-authentication-plugin=mysql_native_password
 bind-address=0.0.0.0
 
 # Disable binary logging
-binlog_expire_logs_seconds=0
+log_bin=OFF
