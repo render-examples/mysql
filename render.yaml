@@ -3,6 +3,7 @@ services:
   name: mysql
   plan: standard
   env: docker
+  autoDeploy: false
   disk:
     name: mysql
     mountPath: /var/lib/mysql
