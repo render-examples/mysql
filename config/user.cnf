@@ -2,5 +2,18 @@
 # Needed for compatibility with existing SQL clients / WordPress.
 default-authentication-plugin=mysql_native_password
 
+# 1. CRITICAL: Stop MySQL 8.0.24 from misreading host memory
+innodb_dedicated_server = OFF
+
+# 2. Adjust pool size to exactly 50% of your Render RAM 
+# (e.g., 256M if you have a 512MB RAM plan, 512M if you have 1GB RAM)
+innodb_buffer_pool_size = 1G
+
+# 3. Prevent thread bloat from active traffic spikes
+max_connections = 85
+
+# 4. HUGE WIN: Instantly reclaims 100MB-150MB of baseline container RAM
+performance_schema = OFF
+
 # Listen on all interfaces
 bind-address=0.0.0.0
